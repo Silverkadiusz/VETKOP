@@ -7,12 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public class HomeController {
 
-    @GetMapping("")
-    public String home() {
-        return "home";
-    }
 
-    @GetMapping("/register")
+   /* @GetMapping("/register")
     public String register() {
         return "register-form";
     }
@@ -24,6 +20,11 @@ public class HomeController {
     }
 
      */
+
+    @GetMapping("")
+    public String homepage() {
+        return "home";
+    }
 
     @GetMapping("/secure")
     public String secure() {

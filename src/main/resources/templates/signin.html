@@ -20,19 +20,16 @@
         <a href="#" class="login-button">Zaloguj</a>
     </nav>
 
-
     <p th:if="${showErrorMessage}">Niepoprawne logowanie!</p>
 
-    <form action="@{/login}" method="post" class="user-form">
+    <form th:action="@{/logowanie}" method="post" class="user-form">
         <h2 class="user-form-title">Logowanie na Vetkop</h2>
-        <input name="login" placeholder="Login" type="text" required>
-        <input name="password" placeholder="Hasło" type="password" required>
-       <button class="user-form-button" value="signin">Zaloguj się </button></br>
+        <input name="username" placeholder="Username"/> <br/>
+        <input name="password" placeholder="Password"/> <br/>
+        <button class="user-form-button" value="signin">Zaloguj się </button></br>
         <p>Nie masz konta? <a href="/register"> Zarejestruj się </a></p>
         </br>
     </form>
-
-
 
     <footer>Vetkop ®, developed by Jojo</footer>
 </div>

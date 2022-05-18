@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AuthController {
 
-    @GetMapping("/login")
-    public String loginForm(@RequestParam(required = false) String error, Model model) {
-
+    @GetMapping("/logowanie")
+    public String loginForm(@RequestParam(required = false) String error,
+                            Model model) {
         boolean showErrorMessage = false;
 
         if (error != null) {
@@ -19,7 +19,6 @@ public class AuthController {
         }
         model.addAttribute("showErrorMessage", showErrorMessage);
 
-        return "/signin";
-
+        return "signin";
     }
 }
