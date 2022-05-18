@@ -29,7 +29,6 @@ a {
     font-weight: 500;
 }
 
-/* efekt przycisku logowania */
 .login-button {
     background-color: #32eed8;
     color: white;
@@ -39,12 +38,47 @@ a {
     line-height: 24px;
     font-weight: 400;
     letter-spacing: .1em;
+    margin: 0;
+}
+
+.panel-login-button >ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.panel-login-button >ul > li {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-weight: 500;
+    border: 2px solid;
+    color: white;
+    opacity: 0.8;
 }
 
 /* po najechaniu na przycisk lekka przezroczystość */
-.login-button:hover {
+.panel-login-button > ul > li:hover{
     opacity: 80%;
 }
+
+.panel-login-button > ul > li:hover {
+    opacity: 1;
+}
+
+.panel-login-button > ul > li > a {
+    color: inherit;
+    display: block;
+    text-align: center;
+}
+
+.panel-login-button  > ul > li {
+    background-color: #3ce9e9;
+}
+/* efekt przycisku logowania */
+
 
 /* usuwamy domyślne style przeglądarki i dodajemy flexboxa,
 kafelki mają zajmować tyle samo miejsca */
@@ -108,6 +142,7 @@ kafelki mają zajmować tyle samo miejsca */
 .discovery-header {
     margin: 0;
 }
+
 /* zmiana czcionki "Dodane przez..." */
 .discovery-details {
     color: #757575;

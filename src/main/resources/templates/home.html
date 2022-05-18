@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Vetkop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/css.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+
 <div class="container">
     <nav class="navbar">
-        <a href="#" class="logo">
-            <i class="fas fa-share-alt-square"></i>
+        <a href="/" class="logo">
+            <i class="fa-solid fa-dog"></i>
             Vetkop
         </a>
-        <a href="#" class="login-button">Zaloguj</a>
+        <aside class="panel-login-button">
+            <ul>
+                <!--<li><a href="/signin.html" action="/signup" method="GET" >Zaloguj</a></li>-->
+                <li ><a href="/logowanie">Zaloguj</a></li>
+                <li ><a href="/register">Rejestracja</a></li>
+            </ul>
+        </aside>
     </nav>
 
     <aside class="categories">
         <ul>
-            <li><a href="#">Zdrowie</a></li>
-            <li><a href="#">Pupile</a></li>
-            <li><a href="#">Adopcja</a></li>
+            <li><a href="/secure">Zdrowie</a></li>
+            <li><a href="/register-form">Pupile</a></li>
+            <li><a href="/logowanie">Adopcja</a></li>
         </ul>
     </aside>
     <main>
@@ -30,7 +37,8 @@
             <h2 class="discovery-header">Przykładowy tytuł</h2>
             <p class="discovery-details">Dodane przez: Mietek, Dnia: 22/01/2015</p>
             <a href="#" class="discovery-link">https://www.example.com</a>
-            <p>cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet</p>
+            <p>cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc
+                congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet</p>
             <section class="discovery-bar">
                 <a href="#" class="discovery-link upvote">
                     <i class="fas fa-arrow-alt-circle-up discovery-upvote"></i>
@@ -45,7 +53,8 @@
             <h2 class="discovery-header">Przykładowy tytuł</h2>
             <p class="discovery-details">Dodane przez: Mietek, Dnia: 22/01/2015</p>
             <a href="#" class="discovery-link">https://www.example.com</a>
-            <p>cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet</p>
+            <p>cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc
+                congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet</p>
             <section class="discovery-bar">
                 <a href="#" class="discovery-link upvote">
                     <i class="fas fa-arrow-alt-circle-up discovery-upvote"></i>
@@ -60,7 +69,8 @@
             <h2 class="discovery-header">Przykładowy tytuł</h2>
             <p class="discovery-details">Dodane przez: Mietek, Dnia: 22/01/2015</p>
             <a href="#" class="discovery-link">https://www.example.com</a>
-            <p>cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet</p>
+            <p>cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc
+                congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet</p>
             <section class="discovery-bar">
                 <a href="#" class="discovery-link upvote">
                     <i class="fas fa-arrow-alt-circle-up discovery-upvote"></i>
