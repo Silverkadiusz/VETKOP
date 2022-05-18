@@ -4,11 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+
 public class HomeController {
 
-    @GetMapping("/")
+    @GetMapping("")
     public String home() {
-        return "index";
+        return "home";
     }
 
     @GetMapping("/register")
@@ -16,9 +17,17 @@ public class HomeController {
         return "register-form";
     }
 
-    @GetMapping("/login")
+    /*
+    @GetMapping("/toLogin")
     public String signIn() {
-        return "signup";
+        return "signin";
+    }
+
+     */
+
+    @GetMapping("/secure")
+    public String secure() {
+        return "secure";
     }
 
 }
