@@ -16,11 +16,10 @@
             <i class="fa-solid fa-dog"></i>
             Vetkop
         </a>
-        <a href="#" class="login-button">Zaloguj</a>
+        <a href="/logowanie" class="login-button">Zaloguj</a>
     </nav>
 
-
-    <form class="user-form">
+    <form class="user-form" method="post" th:action="@{/registerPost}" th:object="${user}">
         <h2 class="user-form-title">Zarejestruj się na Vetkop</h2>
         <input name="username" placeholder="Nazwa użytkownika" required>
         <input name="email" placeholder="email" type="email" required>
