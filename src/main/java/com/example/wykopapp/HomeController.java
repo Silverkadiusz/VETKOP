@@ -1,6 +1,8 @@
 package com.example.wykopapp;
 
+import com.example.wykopapp.user.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -8,21 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
 
-   /* @GetMapping("/register")
-    public String register() {
-        return "register-form";
-    }
-
-    /*
-    @GetMapping("/toLogin")
-    public String signIn() {
-        return "signin";
-    }
-
-     */
-
     @GetMapping("")
-    public String homepage() {
+    public String homepage(Model model) {
+        model.addAttribute("user", new User());
         return "home";
     }
 
@@ -30,5 +20,14 @@ public class HomeController {
     public String secure() {
         return "secure";
     }
+
+
+    @GetMapping("/register")
+    public String register() {
+        return "register-form";
+
+    }
+
+
 
 }
