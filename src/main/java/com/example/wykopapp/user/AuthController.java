@@ -17,13 +17,14 @@ public class AuthController {
 
     @GetMapping("/logowanie")
     public String loginForm(@RequestParam(required = false) String error,
-                            Model model) {
+                            Model model, User user) {
         boolean showErrorMessage = false;
 
         if (error != null) {
             showErrorMessage = true;
 
         }
+
         model.addAttribute("showErrorMessage", showErrorMessage);
 
         return "signin";
@@ -34,6 +35,6 @@ public class AuthController {
         String username = user.getUsername();
         String rawPassword = user.getPassword();
         userService.registerUser(username, rawPassword);
-        return "redirect:/";
+        return "signin";
     }
 }
