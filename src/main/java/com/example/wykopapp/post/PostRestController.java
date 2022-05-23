@@ -2,12 +2,13 @@ package com.example.wykopapp.post;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping("/api/tasks")
+@RequestMapping("/api/posts")
 @RestController
 public class PostRestController {
 
@@ -18,8 +19,13 @@ public class PostRestController {
 
     }
 
+
+
     @GetMapping("")
-    public List<Post> findAll() {
+    public List<Post> findAll(Model model) {
+        List<Post> posts = postRepository.findAll();
+        model.addAttribute("posts", posts);
+        model.addAttribute("newPost", new Post());
         return postRepository.findAll();
     }
 
@@ -32,7 +38,7 @@ public class PostRestController {
     }
 
 
-    @PostMapping("")
+    @PostMapping("/add")
     public ResponseEntity<Post> addPost(@RequestBody Post post) {
         if (post.getId() != null) {
             return ResponseEntity.badRequest().build();
@@ -42,7 +48,7 @@ public class PostRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Post> addTask(@PathVariable Long id, @RequestBody Post post) {
+    public ResponseEntity<Post> addPost(@PathVariable Long id, @RequestBody Post post) {
 
         Optional<Post> postOptional = postRepository.findById(id);
         if (postOptional.isPresent()) {
@@ -65,7 +71,6 @@ public class PostRestController {
             // ignore
         }
     }
-
 
 
 }

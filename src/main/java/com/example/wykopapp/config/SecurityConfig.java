@@ -21,13 +21,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/img/**").permitAll()
-                .antMatchers("/styles/**").permitAll()
                 .antMatchers("/").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/styles/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/logowanie")
-                .loginPage("/register")
                 .permitAll()
                 .and()
                 .logout()
@@ -43,9 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-
-        PasswordEncoder delegatingPasswordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        return delegatingPasswordEncoder;
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
 }
